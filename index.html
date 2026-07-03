@@ -1766,9 +1766,7 @@ img {
   </div>
 </section>
 
-<!-- ========================================
-     CONTACT
-     ======================================== -->
+
 <section id="contact" class="section">
   <div class="container">
     <div class="section-header reveal">
@@ -1834,9 +1832,7 @@ img {
   </div>
 </section>
 
-<!-- ========================================
-     SOCIAL MEDIA
-     ======================================== -->
+
 <section id="social" class="section" style="padding-bottom: 2rem;">
   <div class="container">
     <div class="section-header reveal">
@@ -1847,9 +1843,7 @@ img {
   </div>
 </section>
 
-<!-- ========================================
-     NEWSLETTER
-     ======================================== -->
+
 <section class="section" style="padding-top: 2rem;">
   <div class="container">
     <div class="newsletter-section reveal">
@@ -1863,9 +1857,7 @@ img {
   </div>
 </section>
 
-<!-- ========================================
-     FOOTER
-     ======================================== -->
+
 <footer class="footer">
   <div class="container">
     <div class="footer-grid">
@@ -1908,16 +1900,12 @@ img {
   </div>
 </footer>
 
-<!-- ========================================
-     BACK TO TOP
-     ======================================== -->
+
 <button id="back-to-top" aria-label="Back to top" onclick="window.scrollTo({top:0,behavior:'smooth'})">
   <i class="fa-solid fa-arrow-up"></i>
 </button>
 
-<!-- ========================================
-     MODALS
-     ======================================== -->
+
 <div class="modal-overlay" id="modal-overlay">
   <div class="modal-box" style="position:relative;">
     <button class="modal-close" onclick="closeModal()"><i class="fa-solid fa-xmark"></i></button>
@@ -1939,16 +1927,11 @@ img {
   </div>
 </div>
 
-<!-- Toast -->
+
 <div class="toast" id="toast"></div>
 
-<!-- ========================================
-     JAVASCRIPT
-     ======================================== -->
 <script>
-/* ========================================
-   DATA & CONFIG
-   ======================================== */
+
 const servicesData = {
   "Academic Subjects": [
     {t:"Science", i:"fa-flask"},
@@ -2043,9 +2026,6 @@ const socials = [
   {name:"Instagram", icon:"fa-brands fa-instagram", color:"#E4405F", link:"https://instagram.com/tobiteaches"}
 ];
 
-/* ========================================
-   UTILITIES
-   ======================================== */
 function showToast(msg) {
   const t = document.getElementById('toast');
   t.textContent = msg;
@@ -2068,9 +2048,7 @@ function createRipple(e) {
   setTimeout(() => circle.remove(), 600);
 }
 
-/* ========================================
-   RENDER FUNCTIONS
-   ======================================== */
+
 function renderServices() {
   const container = document.getElementById('services-container');
   for (const [cat, items] of Object.entries(servicesData)) {
@@ -2200,9 +2178,7 @@ function joinWhatsApp(event) {
     );
   }
 }
-/* ========================================
-   REVIEWS LOGIC
-   ======================================== */
+
 function getBrowserId() {
   let id = localStorage.getItem('tt_browserId');
   if (!id) {
@@ -2338,9 +2314,7 @@ function resetStars() {
   if (starContainer) starContainer.querySelectorAll('i').forEach(s => s.classList.remove('active'));
 }
 
-/* ========================================
-   FAQ
-   ======================================== */
+
 function toggleFaq(btn) {
   const item = btn.parentElement;
   const isActive = item.classList.contains('active');
@@ -2348,9 +2322,7 @@ function toggleFaq(btn) {
   if (!isActive) item.classList.add('active');
 }
 
-/* ========================================
-   CONTACT & NEWSLETTER
-   ======================================== */
+
 function submitContact(e) {
   e.preventDefault();
   const name = document.getElementById('c-name').value.trim();
@@ -2380,9 +2352,7 @@ function submitNewsletter(e) {
   showModal('Subscribed!', 'You have successfully subscribed to the Tobi Teaches newsletter.');
 }
 
-/* ========================================
-   MODALS
-   ======================================== */
+
 function showModal(title, text) {
   const overlay = document.getElementById('modal-overlay');
   const content = document.getElementById('modal-content');
@@ -2406,9 +2376,7 @@ function closeAdminModal() {
   reviewToDelete = null;
 }
 
-/* ========================================
-   SEARCH
-   ======================================== */
+
 function performSearch() {
   const term = document.getElementById('nav-search').value.toLowerCase().trim();
   const map = {
@@ -2427,9 +2395,7 @@ function performSearch() {
   showToast('Section not found. Try Home, About, Services, etc.');
 }
 
-/* ========================================
-   COPY ACCOUNT
-   ======================================== */
+
 function copyAccount() {
   navigator.clipboard.writeText('9153625526').then(() => {
     showModal('Copied!', 'Account number 9153625526 has been copied to your clipboard.');
@@ -2438,9 +2404,7 @@ function copyAccount() {
   });
 }
 
-/* ========================================
-   ANIMATIONS & OBSERVERS
-   ======================================== */
+
 function initObservers() {
   const revealObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -2486,9 +2450,7 @@ function initObservers() {
   document.querySelectorAll('.progress-fill').forEach(el => progressObserver.observe(el));
 }
 
-/* ========================================
-   TYPING EFFECT
-   ======================================== */
+
 function initTyping() {
   const text = "Empowering Senior Secondary School Students Through Quality Education, Digital Skills and Scholarship Opportunities.";
   const el = document.getElementById('typing-text');
@@ -2503,9 +2465,6 @@ function initTyping() {
   setTimeout(type, 500);
 }
 
-/* ========================================
-   PARALLAX BLOBS
-   ======================================== */
 function initParallax() {
   window.addEventListener('scroll', () => {
     const scrolled = window.scrollY;
@@ -2516,9 +2475,7 @@ function initParallax() {
   });
 }
 
-/* ========================================
-   NAVBAR & MENU
-   ======================================== */
+
 function initNav() {
   const navbar = document.getElementById('navbar');
   const hamburger = document.getElementById('hamburger');
@@ -2546,9 +2503,7 @@ function initNav() {
   });
 }
 
-/* ========================================
-   NEWSLETTER POPUP
-   ======================================== */
+
 function initNewsletterPopup() {
   if (sessionStorage.getItem('tt_popupShown')) return;
   setTimeout(() => {
@@ -2567,18 +2522,13 @@ function initNewsletterPopup() {
   }, 6000);
 }
 
-/* ========================================
-   LOADING
-   ======================================== */
+
 window.addEventListener('load', () => {
   setTimeout(() => {
     document.getElementById('loading-screen').classList.add('hidden');
   }, 800);
 });
 
-/* ========================================
-   INIT
-   ======================================== */
 document.addEventListener('DOMContentLoaded', () => {
   renderServices();
   renderWhyUs();
